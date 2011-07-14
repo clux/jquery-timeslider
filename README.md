@@ -1,6 +1,6 @@
 #About
 **jQuery timeslider** is a plug-in that lets you bind a slider element to an input element for easy timeselection. 
-
+[demo here](http://clux.org/files/timeslider/)
 
 #Features
  * ctrl-left/right & ctrl-left/right to move minute/hour steps from the field
