@@ -12,13 +12,25 @@
 <script>$(function(){ $('#timer').timeslider(); });</script>
 </div>
 <br>
-<div> Allows ctrl-left/right to move the slider one minute step (i.e. it matches the datepicker keyboard interface), 
-and ctrl-shift-left/right to move one hour on the slider.
-Of course, it's still a slider, so the mouse interface is obviously even simpler, 
-but unlike other <a href="https://github.com/trentrichardson/jQuery-Timepicker-Addon">popular</a> / 
-<a href="http://plugins.jquery.com/plugin-tags/time-picker">less popular</a> alternatives,
- it doesn't break keyboard navigation.
+<div> <h3>Features</h3>
+<ul><li>ctrl-left/right & ctrl-left/right to move minute/hour steps from the field</li>
+<li>Fades away after use</li>
+<li>Parses keyboard input to move the slider</li>
+<li>Doesn't break keyboard navigation unlike other <a href="https://github.com/trentrichardson/jQuery-Timepicker-Addon">popular</a> / 
+<a href="http://plugins.jquery.com/plugin-tags/time-picker">less popular</a> alternatives.</li>
+<li>Uses jquery-ui theming - no extra css elements</li>
+<li>on focusout: slider element disabled and opacity zeroed</li>
+</ul>
 </div>
+<div><h3>Options</h3>
+<ul>
+<li>minutes : minimum minute step</li>
+<li>stop    : slider's stop function</li>
+</ul></div>
+<div><h3>Compatibility</h3>
+Tested in all new major browsers except IE</div>
+<div><h3>Dependencies</h3>
+<ul><li>jquery</li><li>jquery-ui</li><li>jquery-hotkeys</li></ul></div>
 
-<div>It also allows you to set the default number of minutes per step:</div>
+<div>More information on <a href="http://github.com/clux/jquery-timeslider">github</a></div>
 </body>
