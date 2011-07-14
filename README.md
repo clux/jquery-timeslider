@@ -30,4 +30,5 @@ It's worth adding.
 $('#inputfield').timeslider()
 $('#inputfield').timeslider(options)
 
-Note that options.minutes variants work best when it is a number that divides 60 i.e. n in [1,2,4,5,6,10,15,20,30]
+ * options.minutes variants work best when it is a number that divides 60 i.e. n in [1,2,4,5,6,10,15,20,30]
+ * **.coffee source can be compiled BARE** (i.e. same as with the coffeescript.org 'try it' interactive compiler)
