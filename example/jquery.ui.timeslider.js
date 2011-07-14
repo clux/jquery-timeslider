@@ -1,6 +1,6 @@
 (function($) {
   return $.fn.timeslider = function(options) {
-    var N, element, field, num_ticks, parseInput, slide, slidefn, stop, _ref, _ref2;
+    var N, element, field, num_ticks, parseInput, setState, slide, slidefn, stop, _ref, _ref2;
     if (options == null) {
       options = {};
     }
@@ -66,25 +66,23 @@
         return element.slider('value', element.slider('value') + chng);
       };
     };
-    this.focus(function() {
-      return element.show().children('a').effect('highlight');
-    }).keydown('ctrl+left', slide(-1)).keydown('ctrl+right', slide(1)).keydown('ctrl+shift+right', slide(60 / N)).keydown('ctrl+shift+left', slide(-60 / N)).keydown('tab', function() {
-      return element.hide();
-    }).keyup(function(e) {
+    setState = function(setActive) {
+      var method;
+      method = setActive ? 'enable' : 'disable';
+      return function() {
+        return element.css('opacity', Number(setActive)).slider(method);
+      };
+    };
+    this.focus(setState(true)).keydown('ctrl+left', slide(-1)).keydown('ctrl+right', slide(1)).keydown('ctrl+shift+right', slide(60 / N)).keydown('ctrl+shift+left', slide(-60 / N)).keyup(function(e) {
       var _ref3, _ref4;
       if ((95 < (_ref3 = e.keyCode) && _ref3 < 106) || (47 < (_ref4 = e.keyCode) && _ref4 < 58)) {
         return parseInput();
       }
-    }).focusout(function() {
-      return element.hide();
-    });
+    }).focusout(setState(false));
+    element.focusin(setState(true)).focusout(setState(false)).trigger('focusout');
     element.focusin(function() {
-      return element.show();
-    }).keydown('tab', function() {
-      return element.hide();
-    }).focusout(function() {
-      return element.hide();
-    }).hide();
+      return element.children('a').focus();
+    });
     return element;
   };
 })(jQuery);

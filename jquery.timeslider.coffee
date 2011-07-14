@@ -1,4 +1,5 @@
 (($) ->
+  # takes an input field and creates a slider element bound to it  
   $.fn.timeslider = (options={}) ->
     field = @
     return false if @length > 1 or !@is("input") or !@attr('name')
@@ -53,20 +54,25 @@
     
     slide = (chng) ->
       -> element.slider('value', element.slider('value') + chng)
+      
+    setState = (setActive) ->
+      method = if setActive then 'enable' else 'disable'
+      -> element.css('opacity', Number(setActive)).slider(method)
     
-    @focus( -> element.show().children('a').effect('highlight') )
+    @focus(setState(true)) #.children('a').effect('highlight')
       .keydown('ctrl+left', slide(-1))
       .keydown('ctrl+right', slide(1))
       .keydown('ctrl+shift+right', slide(60/N))
       .keydown('ctrl+shift+left', slide(-60/N))
-      .keydown('tab', -> element.hide())
       .keyup((e)-> parseInput() if 95 < e.keyCode < 106 || 47 < e.keyCode < 58) #only do it if it was a numeric input
-      .focusout(->element.hide()) #counters below focusin
+      .focusout(setState(false)) #counters below focusin
     element
-      .focusin( ->element.show()) #counters above focusout
-      .keydown('tab', -> element.hide())
-      .focusout(->element.hide()) # fine, because if we go back to field, it shows again
-      .hide() #if we hide it before offset set, things go weird
+      .focusin(setState(true)) #counters above focusout
+      .focusout(setState(false)) # fine, because if we go back to field, it shows again
+      .trigger('focusout')
+    
+    #opera fix: sliderhandle sometimes loses focus for no reason in opera
+    element.focusin(-> element.children('a').focus()) #try to force focus on slider handle
     
     element
 
