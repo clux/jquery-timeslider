@@ -28,7 +28,9 @@ It's worth adding.
 
 #Usage
 $('#inputfield').timeslider()
+
 which can take an optional options hash:
+
 $('#inputfield').timeslider(options)
 
  * options.minutes variants work best when it is a number that divides 60 i.e. n in [1,2,4,5,6,10,15,20,30]
