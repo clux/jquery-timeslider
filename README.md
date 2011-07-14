@@ -8,7 +8,7 @@
  * Parses keyboard input to move the slider
  * Doesn't break keyboard navigation unlike other [popular](https://github.com/trentrichardson/jQuery-Timepicker-Addon) / 
  * [less popular](http://plugins.jquery.com/plugin-tags/time-picker) alternatives.
- * Uses jquery-ui theming - no extra css elements<
+ * Uses jquery-ui theming - no extra css elements
  * on focusout: slider element disabled and opacity zeroed
 
 #Options
