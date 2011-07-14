@@ -1,14 +1,33 @@
-==jquery-timeslider==
+#About
+**jQuery timeslider** is a plug-in that lets you bind a slider element to an input element for easy timeselection. 
 
-Simple unobtrusive timeslider that pops up under the specified field.
 
+#Features
+ * ctrl-left/right & ctrl-left/right to move minute/hour steps from the field
+ * Fades away after use
+ * Parses keyboard input to move the slider
+ * Doesn't break keyboard navigation unlike other [popular](https://github.com/trentrichardson/jQuery-Timepicker-Addon) / 
+ * [less popular](http://plugins.jquery.com/plugin-tags/time-picker) alternatives.
+ * Uses jquery-ui theming - no extra css elements<
+ * on focusout: slider element disabled and opacity zeroed
 
-=Usage=
+#Options
+ * minutes : minimum minute step
+ * stop    : slider's stop function
+
+#Compatibility
+Tested in latest webkit, firefox and opera. IE testing scheduled.
+
+#Dependencies
+ * jquery
+ * jquery-ui
+ * [jquery-hotkeys](https://github.com/jeresig/jquery.hotkeys)
+
+Note that this can probably be rewritten without the hotkeys dependencies easily, but it is only a 3kb (unminified) addon - that is actually very useful.
+It's worth adding.
+
+#Usage
 $('#inputfield').timeslider()
+$('#inputfield').timeslider(options)
 
-=Options=
-An optional options hash can be passed in. Currently does not let you do much, but you can change the default number of minutes per slider step with options.minutes (note works best when it is a number that divides 60 i.e. n in [1,2,4,5,6,10,15,20,30])
-
-=Requirements=
-timeslider() uses the jquery-ui slider element so it needs some reasonable versions both jquery and jquery-ui. Not sure what how early it will stop working, but my implementation is fairly basic - it might go quite far down.
-timeslider() is also implemented using jquery-hotkeys @ https://github.com/jeresig/jquery.hotkeys but i am sure it coult be implemented without this as well. At any rate, this secondary dependency is only 3kb unminified, and it's very useful.
+Note that options.minutes variants work best when it is a number that divides 60 i.e. n in [1,2,4,5,6,10,15,20,30]
