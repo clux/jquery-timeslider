@@ -48,7 +48,8 @@
     parseInput if @val() #otherwise leave the placeholder alone
     @change parseInput
     
-    element.width(field.width()).offset
+    
+    element.width( parseInt(field.width(),10) + parseInt(field.css('paddingRight'),10) + parseInt(field.css('paddingLeft'),10) ).offset
       left  : @offset().left
       top   : element.offset().top
     
