@@ -3,7 +3,7 @@
 [demo here](http://clux.org/files/timeslider/)
 
 #Features
- * ctrl-left/right & ctrl-left/right to move minute/hour steps from the field
+ * ctrl+left/right & ctrl+shift+left/right to move minute/hour steps from the field
  * Fades away after use
  * Parses keyboard input to move the slider
  * Doesn't break keyboard navigation unlike other [popular](https://github.com/trentrichardson/jQuery-Timepicker-Addon) / [less popular](http://plugins.jquery.com/plugin-tags/time-picker) alternatives.
